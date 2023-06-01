@@ -95,7 +95,7 @@ class kinematics():
     
 
 
-    '''call korti hobe ei shalar function re tyle ei shala value pass korbe IK calck r eio shalai leg IK cal er value return korbe'''
+
 
 
     # IK calculator
@@ -166,9 +166,7 @@ class kinematics():
         print('-----------')
         return theta_1, theta_2, theta_3
     
-    # TO-DO : modify this function depending on your robot's configuration
-    # adjusting angle for specific configurations of motors, incl. orientation
-    # this will vary for each robot (possibly for each leg as well)
+  
     def angle_corrector(self, angles=[0,0,0], is_right=True):
         angles[1] -= 1.5*pi; # add offset  //2nd joint// //nicher dike lomba rakhar jnno 2nd joint ta, negatve karon main angle t2 o o negative ashe karon nicher dike -z axis //
         ##angles[2] -= 1.5*pi;
@@ -184,7 +182,7 @@ class kinematics():
         else: 
             if angles[0] > pi:  
                 theta_1 = angles[0] - 2*pi  ##ei kahini korar karon angle re sobsosmoy 180 er moodhe rakha .. oita exceed korle ore negative banano
-            else: theta_1 = angles[0]       ##180 er niche holi ja ache tai
+            else: theta_1 = angles[0]       #180 er niche holi ja ache tai
             
             theta_2 = -angles[1] - 45*pi/180 # 45 degree offset (ok)
         
